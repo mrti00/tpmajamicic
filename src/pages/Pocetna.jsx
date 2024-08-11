@@ -20,7 +20,7 @@ function Pocetna() {
       <section>
         <div
           className="relative w-full h-[calc(90vh-4rem)] overflow-hidden md:rounded-full"
-          data-aos="flip-down"
+          data-aos="fade"
           data-aos-duration="2000"
         >
           <img
@@ -110,9 +110,7 @@ function Pocetna() {
       </section>
 
       <section data-aos="fade" data-aos-duration="2000">
-        <h2 className="text-3xl font-bold text-gray-800">
-          Ekološki Prihvatljiv Pristup
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800">Održiv Metod</h2>
         <p className="text-lg text-gray-700 mt-2 mb-10">
           Naša kompanija posvećena je održivosti i očuvanju životne sredine kroz
           sve aspekte naših procesa reciklaže. Verujemo da je naš doprinos

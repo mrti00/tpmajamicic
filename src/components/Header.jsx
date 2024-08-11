@@ -47,8 +47,8 @@ function Header() {
   return (
     <header
       className="shadow-md w-full fixed top-0 left-0 bg-white z-50 "
-      data-aos="zoom-in"
-      data-aos-duration="1000"
+      data-aos="fade"
+      data-aos-duration="2000"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-10 py-2 relative">
         <div className="md:flex items-center justify-between">
