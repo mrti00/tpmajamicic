@@ -1,14 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 function Faq() {
-  //Aos library
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleOpen = (index) => {
@@ -41,18 +34,12 @@ function Faq() {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">
           Često Postavljana Pitanja
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
-              data-aos="fade"
-              data-aos-duration="3000"
               key={index}
               className="bg-white p-6 rounded-lg shadow-md cursor-pointer relative"
               onClick={() => toggleOpen(index)}

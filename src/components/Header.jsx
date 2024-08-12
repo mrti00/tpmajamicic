@@ -2,9 +2,6 @@ import { useState } from "react";
 import logo from "../assets/images/logo_tpmajamicic.svg";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 function Header() {
   let Links = [
@@ -40,16 +37,8 @@ function Header() {
     });
   };
 
-  // Hook for animation, library called: AOS
-  useEffect(() => {
-    Aos.init();
-  }, []);
   return (
-    <header
-      className="shadow-md w-full fixed top-0 left-0 bg-white z-50 "
-      // data-aos="fade"
-      // data-aos-duration="2000"
-    >
+    <header className="shadow-md w-full fixed top-0 left-0 bg-white z-50 ">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-10 py-2 relative">
         <div className="md:flex items-center justify-between">
           <img
