@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/tpmajamicic">
+    <Router basename="/tpmajamicic/">
       <div className="bg-[#F0F7EE] min-h-screen">
         <Header />
         <div className="pt-28 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-10">
