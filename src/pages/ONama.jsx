@@ -1,15 +1,8 @@
 import { FaEye, FaUsers, FaHandshake } from "react-icons/fa";
 import { useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import planeta from "../assets/images/planet_earth.jpg";
 
 function ONama() {
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   const [partners] = useState([
     { name: "Partner 1" },
     { name: "Partner 2" },
@@ -21,18 +14,10 @@ function ONama() {
   return (
     <main>
       <section>
-        <h2
-          className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
           O Nama
         </h2>
-        <p
-          className="text-lg text-gray-700 mb-12 leading-relaxed"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <p className="text-lg text-gray-700 mb-12 leading-relaxed">
           TP Maja Mićić je prepoznatljiva firma koja se ponosi dugom tradicijom
           i značajnim iskustvom u oblasti reciklaže sekundarnih sirovina.
           Osnovana 2002. godine, naš cilj je bio da stvorimo kompaniju koja ne
@@ -46,11 +31,7 @@ function ONama() {
         </p>
         <div className="flex flex-col md:flex-row gap-6 mb-12 md:mt-24">
           <div className="flex-1">
-            <div
-              className="bg-white border border-gray-300 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl"
-              data-aos="fade"
-              data-aos-duration="2000"
-            >
+            <div className="bg-white border border-gray-300 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
               <div className="flex gap-2 items-center justify-center mb-4">
                 <h2 className="text-2xl font-bold text-gray-800">
                   Vizija i Misija
@@ -67,11 +48,7 @@ function ONama() {
             </div>
           </div>
           <div className="flex-1">
-            <div
-              className="bg-white border border-gray-300 rounded-lg p-[9.8px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl"
-              data-aos="fade"
-              data-aos-duration="2000"
-            >
+            <div className="bg-white border border-gray-300 rounded-lg p-[9.8px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
               <div className="flex gap-2 items-center justify-center mb-4">
                 <h2 className="text-2xl font-bold text-gray-800">Naš Tim</h2>
                 <FaUsers className="text-2xl text-gray-800" />
@@ -86,11 +63,7 @@ function ONama() {
             </div>
           </div>
         </div>
-        <div
-          className="relative w-full h-[550px] overflow-hidden rounded-xl mb-16"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <div className="relative w-full h-[550px] overflow-hidden rounded-xl mb-16">
           <img
             src={planeta}
             alt="Planeta zemlja"
@@ -106,21 +79,13 @@ function ONama() {
           </div>
         </div>
 
-        <div
-          className="flex items-center mb-6 gap-2 justify-center"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <div className="flex items-center mb-6 gap-2 justify-center">
           <h2 className="text-xl md:text-2xl font-bold text-gray-800">
             Partneri
           </h2>
           <FaHandshake className="text-2xl text-gray-800" />
         </div>
-        <p
-          className="text-lg mb-4 leading-relaxed"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <p className="text-lg mb-4 leading-relaxed">
           Tokom godina, sarađivali smo sa mnogim važnim partnerima i klijentima
           koji su prepoznali našu stručnost i kvalitet. Naši projekti uključuju
           uspešnu saradnju sa velikim industrijskim firmama i lokalnim
@@ -128,16 +93,12 @@ function ONama() {
           partnera u industriji reciklaže.
         </p>
 
-        <p className="text-lg mb-8" data-aos="fade" data-aos-duration="2000">
+        <p className="text-lg mb-8">
           Sledeći partneri su se poverili nama i uživaju u kvalitetu naših
           usluga:
         </p>
 
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 "
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {partners.map((partner, index) => (
             <div
               key={index}

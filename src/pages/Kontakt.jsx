@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
@@ -7,8 +7,6 @@ import L from "leaflet";
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 // Da bi marker izgledao ispravno
 delete L.Icon.Default.prototype._getIconUrl;
@@ -20,10 +18,6 @@ L.Icon.Default.mergeOptions({
 });
 
 const Kontakt = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -68,7 +62,7 @@ const Kontakt = () => {
 
   return (
     <main>
-      <section className="relative" data-aos="fade" data-aos-duration="2000">
+      <section className="relative">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
           Kontakt
         </h2>
@@ -127,11 +121,7 @@ const Kontakt = () => {
             )}
           </form>
 
-          <div
-            className="mt-8 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-center"
-            data-aos="fade"
-            data-aos-duration="2000"
-          >
+          <div className="mt-8 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-center">
             <div className="flex items-center justify-center mb-4">
               <FaPhoneAlt className="text-gray-800 mr-2" />
               <a href="tel:0641509929" className="text-lg">

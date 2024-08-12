@@ -1,8 +1,5 @@
 import TypewriterComponent from "typewriter-effect";
 import boxes from "../assets/images/boxes.jpg";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import { BsStopwatch } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
 import { FaRecycle } from "react-icons/fa";
@@ -11,18 +8,10 @@ import Faq from "../components/Faq";
 
 // Hook for animation, library called: AOS
 function Pocetna() {
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   return (
     <main>
       <section>
-        <div
-          className="relative w-full h-[calc(90vh-4rem)] overflow-hidden md:rounded-full"
-          data-aos="fade"
-          data-aos-duration="2000"
-        >
+        <div className="relative w-full h-[calc(90vh-4rem)] overflow-hidden md:rounded-full">
           <img
             src={boxes}
             alt="Kutije"
@@ -55,19 +44,11 @@ function Pocetna() {
       </section>
       <section className="mt-16 ">
         <div className="mx-auto px-4 mt-5">
-          <h2
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800"
-            data-aos="fade"
-            data-aos-duration="2000"
-          >
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
             Zašto izabrati nas?
           </h2>
           <div className="flex flex-wrap -mx-4 ">
-            <div
-              className="w-full md:w-1/3 px-4 md:mb-8 mb-5"
-              data-aos="fade"
-              data-aos-duration="2000"
-            >
+            <div className="w-full md:w-1/3 px-4 md:mb-8 mb-5">
               <BsStopwatch className="w-full h-12 md:h-16 mb-5 text-gray-800" />
 
               <div className="bg-white p-6 rounded-lg shadow-lg mb-10 ">
@@ -78,11 +59,7 @@ function Pocetna() {
                 </p>
               </div>
             </div>
-            <div
-              className="w-full md:w-1/3 px-4 mb-8"
-              data-aos="fade"
-              data-aos-duration="2000"
-            >
+            <div className="w-full md:w-1/3 px-4 mb-8">
               <GiMoneyStack className="w-full  h-14 md:h-16 mb-5 text-gray-800" />
 
               <div className="bg-white p-6 rounded-lg shadow-lg mb-10">
@@ -90,11 +67,7 @@ function Pocetna() {
                 <p>Pružamo konkurentne cene koje odgovaraju vašem budžetu.</p>
               </div>
             </div>
-            <div
-              className="w-full md:w-1/3 px-4 mb-8"
-              data-aos="fade"
-              data-aos-duration="2000"
-            >
+            <div className="w-full md:w-1/3 px-4 mb-8">
               <FaRecycle className="w-full h-12 md:h-16 mb-5 text-gray-800" />
 
               <div className="bg-white p-6 rounded-lg shadow-lg mb-10">
@@ -109,7 +82,7 @@ function Pocetna() {
         </div>
       </section>
 
-      <section data-aos="fade" data-aos-duration="2000">
+      <section>
         <h2 className="text-3xl font-bold text-gray-800">Održiv Metod</h2>
         <p className="text-lg text-gray-700 mt-2 mb-10">
           Naša kompanija posvećena je održivosti i očuvanju životne sredine kroz
@@ -159,11 +132,7 @@ function Pocetna() {
 
       <section className="mt-16">
         <div>
-          <div
-            className="text-center mb-10"
-            data-aos="fade"
-            data-aos-duration="2000"
-          >
+          <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-5 mb-5">
               <h2 className=" text-3xl md:text-4xl font-bold mb-4  text-gray-800">
                 Naša misija
@@ -181,7 +150,7 @@ function Pocetna() {
             </p>
           </div>
 
-          <div className="mb-12" data-aos="fade" data-aos-duration="2000">
+          <div className="mb-12">
             <h3 className="text-3xl font-semibold mb-4 text-gray-700 mt-16">
               Održivost u Srži Našeg Poslovanja
             </h3>
@@ -194,7 +163,7 @@ function Pocetna() {
             </p>
           </div>
 
-          <div className="mb-12" data-aos="fade" data-aos-duration="2000">
+          <div className="mb-12">
             <h3 className="text-3xl font-semibold mb-4 text-gray-700">
               Inovacije za Bolju Budućnost
             </h3>
@@ -207,7 +176,7 @@ function Pocetna() {
             </p>
           </div>
 
-          <div data-aos="fade" data-aos-duration="2000">
+          <div>
             <h3 className="text-3xl font-semibold mb-4 text-gray-700">
               Zajednička Odgovornost
             </h3>
