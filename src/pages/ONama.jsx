@@ -20,14 +20,14 @@ function ONama() {
         <p className="text-lg text-gray-700 mb-12 leading-relaxed">
           TP Maja Mićić je prepoznatljiva firma koja se ponosi dugom tradicijom
           i značajnim iskustvom u oblasti reciklaže sekundarnih sirovina.
-          Osnovana 2002. godine, naš cilj je bio da stvorimo kompaniju koja ne
-          samo da odgovara na potrebe tržišta, već i postavlja standarde u
-          industriji reciklaže. Kroz godine posvećenosti i stalnog unapređenja,
-          TP Maja Mićić je izgradila reputaciju lidera u pružanju inovativnih i
-          efikasnih rešenja za upravljanje sekundarnim sirovinama. Naša
-          filozofija je usmerena na očuvanje životne sredine i održivost, a naše
-          metode su dizajnirane da minimiziraju uticaj na prirodu dok
-          istovremeno maksimizujemo efikasnost u procesu reciklaže.
+          Osnovana 2002. godine, osnivač: Jovan Mićić. Naš cilj je bio da
+          stvorimo kompaniju koja ne samo da odgovara na potrebe tržišta, već i
+          postavlja standarde u industriji reciklaže. Kroz godine posvećenosti i
+          stalnog unapređenja, TP Maja Mićić je izgradila reputaciju lidera u
+          pružanju inovativnih i efikasnih rešenja za upravljanje sekundarnim
+          sirovinama. Naša filozofija je usmerena na očuvanje životne sredine i
+          održivost, a naše metode su dizajnirane da minimiziraju uticaj na
+          prirodu dok istovremeno maksimizujemo efikasnost u procesu reciklaže.
         </p>
         <div className="flex flex-col md:flex-row gap-6 mb-12 md:mt-24">
           <div className="flex-1">

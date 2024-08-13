@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaClock, FaUserCircle } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 import L from "leaflet";
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
@@ -35,7 +35,7 @@ const Kontakt = () => {
     e.preventDefault();
     setIsSending(true);
 
-    fetch("https://formspree.io/f/xyzgjdaz", {
+    fetch("https://formspree.io/f/mdknzbql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,10 +66,45 @@ const Kontakt = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
           Kontakt
         </h2>
-        <div className="flex md:flex-row flex-col items-center">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:hidden mb-8 text-center">
+            <div className="flex items-center justify-center mb-4">
+              <FaUserCircle className="text-gray-800 mr-2 text-xl" />
+              <p className="text-lg">
+                Vlasnik: <span className="font-bold">Jovan Mićić</span>
+              </p>
+            </div>
+            <div className="flex items-center justify-center mb-4">
+              <FaPhoneAlt className="text-gray-800 mr-2 text-xl" />
+              <a href="tel:0641509929" className="text-lg">
+                Telefon:{" "}
+                <span className="text-gray-800 underline hover:underline">
+                  0641509929
+                </span>
+              </a>
+            </div>
+            <div className="flex items-center justify-center mb-4">
+              <FaEnvelope className="text-gray-800 mr-2 text-xl" />
+              <a href="mailto:jovanmicic66@gmail.com" className="text-lg">
+                Email:{" "}
+                <span className="text-gray-800 underline hover:underline">
+                  jovanmicic66@gmail.com
+                </span>
+              </a>
+            </div>
+            <div className="flex items-center justify-center mb-4">
+              <FaClock className="text-gray-800 mr-2 text-xl" />
+              <p className="text-lg">Pon – Pet: 07:00 – 15:00</p>
+            </div>
+            <div className="flex items-center justify-center mb-4">
+              <IoLocationSharp className="text-gray-800 mr-2 text-xl" />
+              <p className="text-lg">Požega, Srbija</p>
+            </div>
+          </div>
+
           <form
             onSubmit={handleSubmit}
-            className="w-full mb-4 md:mb-16 md:w-3/4 lg:w-2/3 xl:w-1/2 bg-white border  p-6 rounded-lg shadow-lg flex flex-col"
+            className="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 bg-white border p-6 rounded-lg shadow-lg flex flex-col"
           >
             <label htmlFor="name" className="block mb-2 text-lg font-medium">
               Ime
@@ -112,7 +147,7 @@ const Kontakt = () => {
               className={`w-full p-3 text-white font-semibold rounded-md ${isSending ? "bg-gray-400" : "bg-gray-700 hover:bg-gray-800"}`}
               disabled={isSending}
             >
-              {isSending ? "Šaljem..." : "Pošaljite"}
+              {isSending ? "Šalje se..." : "Pošaljite"}
             </button>
             {statusMessage && (
               <p className="mt-4 text-center text-lg font-medium text-gray-800">
@@ -121,9 +156,15 @@ const Kontakt = () => {
             )}
           </form>
 
-          <div className="mt-8 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-center">
+          <div className="hidden md:block mt-8 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-center">
             <div className="flex items-center justify-center mb-4">
-              <FaPhoneAlt className="text-gray-800 mr-2" />
+              <FaUserCircle className="text-gray-800 mr-2 text-xl" />
+              <p className="text-lg">
+                Vlasnik: <span className="font-bold">Jovan Mićić</span>
+              </p>
+            </div>
+            <div className="flex items-center justify-center mb-4">
+              <FaPhoneAlt className="text-gray-800 mr-2 text-xl" />
               <a href="tel:0641509929" className="text-lg">
                 Telefon:{" "}
                 <span className="text-gray-800 underline hover:underline">
@@ -132,7 +173,7 @@ const Kontakt = () => {
               </a>
             </div>
             <div className="flex items-center justify-center mb-4">
-              <FaEnvelope className="text-gray-800 mr-2" />
+              <FaEnvelope className="text-gray-800 mr-2 text-xl" />
               <a href="mailto:jovanmicic66@gmail.com" className="text-lg">
                 Email:{" "}
                 <span className="text-gray-800 underline hover:underline">
@@ -141,16 +182,17 @@ const Kontakt = () => {
               </a>
             </div>
             <div className="flex items-center justify-center mb-4">
-              <FaClock className="text-gray-800 mr-2" />
+              <FaClock className="text-gray-800 mr-2 text-xl" />
               <p className="text-lg">Pon – Pet: 07:00 – 15:00</p>
             </div>
             <div className="flex items-center justify-center mb-4">
-              <IoLocationSharp className="text-gray-800 mr-2" />
+              <IoLocationSharp className="text-gray-800 mr-2 text-xl" />
               <p className="text-lg">Požega, Srbija</p>
             </div>
           </div>
         </div>
-        <div className="w-full h-[250px] md:h-96 z-10">
+
+        <div className="w-full h-[250px] md:h-96 z-10 mt-8">
           <MapContainer
             center={[43.843700339879334, 20.051871376712775]}
             zoom={15}
@@ -158,12 +200,10 @@ const Kontakt = () => {
           >
             <TileLayer
               url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-              attribution='&copy; <a href="https://www.carto.com/attributions">CARTO</a> & <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              attribution='&copy; <a href="https://www.carto.com/attributions">CARTO</a> & <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>'
             />
             <Marker position={[43.843700339879334, 20.051871376712775]}>
-              <Popup>
-                TP Maja Mićić: <br /> Požega, Srbija
-              </Popup>
+              <Popup>Požega, Srbija</Popup>
             </Marker>
           </MapContainer>
         </div>

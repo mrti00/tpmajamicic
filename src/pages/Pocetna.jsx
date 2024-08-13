@@ -6,7 +6,6 @@ import { FaRecycle } from "react-icons/fa";
 import { GoRocket } from "react-icons/go";
 import Faq from "../components/Faq";
 
-// Hook for animation, library called: AOS
 function Pocetna() {
   return (
     <main>
