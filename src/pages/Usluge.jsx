@@ -118,7 +118,7 @@ const Usluge = () => {
           </p>
           <p className="mb-2">
             Ako imate materijale koje želite da prodate, slobodno nas
-            kontaktirajte. Nudimo konkurentne cene i brzu obrada.
+            kontaktirajte. Nudimo konkurentne cene i brzu obradu.
           </p>
           <p className="mb-12">
             Takođe, obezbeđujemo preuzimanje materijala sa vaše lokacije širom
