@@ -59,7 +59,7 @@ const Usluge = () => {
               className="w-full h-[300px] md:h-[400px] object-cover shadow-md"
             />
             <div className="absolute inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center">
-              <h2 className="text-2xl md:text-3xl text-white text-center flex items-center">
+              <h2 className="text-2xl md:text-3xl text-white text-center flex flex-col md:flex-row items-center whitespace-nowrap">
                 <span>Prodaja kutija za </span>
                 <span className="ml-2">
                   <TypewriterComponent
