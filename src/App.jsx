@@ -12,9 +12,9 @@ function App() {
   return (
     <Router>
       <div className="bg-[#F0F7EE] min-h-screen">
-        <Header />
         <ScrollToTop />
-        <div className="pt-28 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-10">
+        <Header />
+        <div className="pt-28 max-w-full mx-auto px-4 md:px-5 lg:px-16 ">
           <Routes>
             <Route path="/" element={<Pocetna />} />
             <Route path="/o-nama" element={<ONama />} />

@@ -4,13 +4,12 @@ import { BsStopwatch } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
 import { FaRecycle } from "react-icons/fa";
 import { GoRocket } from "react-icons/go";
-import Faq from "../components/Faq";
 
 function Pocetna() {
   return (
     <main>
       <section>
-        <div className="relative w-full h-[calc(90vh-4rem)] overflow-hidden md:rounded-full">
+        <div className="relative w-full h-[calc(90vh-4rem)]  overflow-hidden md:rounded-full">
           <img
             src={boxes}
             alt="Kutije"
@@ -42,7 +41,7 @@ function Pocetna() {
         </div>
       </section>
       <section className="mt-16 ">
-        <div className="mx-auto px-4 mt-5">
+        <div className="text-center mx-auto px-4 mt-5">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
             Zašto izabrati nas?
           </h2>
@@ -53,13 +52,13 @@ function Pocetna() {
               <div className="bg-white p-6 rounded-lg shadow-lg mb-10 ">
                 <h3 className="text-xl font-semibold mb-4">Brza procena</h3>
                 <p>
-                  Naša stručnost omogućava brzu i tačnu procenu svih sekundarnih
+                  Naša stručnost omogućava brzu i tačnu procenu sekundarnih
                   sirovina.
                 </p>
               </div>
             </div>
             <div className="w-full md:w-1/3 px-4 mb-8">
-              <GiMoneyStack className="w-full  h-14 md:h-16 mb-5 text-gray-800" />
+              <GiMoneyStack className="w-full  h-12 md:h-16 mb-5 text-gray-800" />
 
               <div className="bg-white p-6 rounded-lg shadow-lg mb-10">
                 <h3 className="text-xl font-semibold mb-4">Najbolje cene</h3>
@@ -96,9 +95,10 @@ function Pocetna() {
         <ul className="list-disc list-inside text-gray-700 mb-10">
           <li className="mb-4">
             <strong>Reciklaža materijala:</strong> Reciklaža materijala koji bi
-            inače završio na deponijama, uključujući plastiku, papir, metal i
-            staklo. Naš cilj je da produžimo životni vek ovih materijala i
-            smanjimo njihov uticaj na okolinu.
+            inače završio na deponijama, uključujući karton, plastiku, papir,
+            staklene ambalaže, plastične flaše, streč foliju, polietilensku
+            foliju i najlon. Naš cilj je da produžimo životni vek ovih
+            materijala i smanjimo njihov uticaj na okolinu.
           </li>
           <li className="mb-4">
             <strong>Ekološki prihvatljive metode:</strong> Koristimo ekološki
@@ -128,10 +128,11 @@ function Pocetna() {
           buduće generacije.
         </p>
       </section>
+      <hr className="border-t-2 border-transparent mt-5 md:mt-10 bg-gradient-to-r from-[#F0F7EE] via-white to-[#F0F7EE] h-1" />
 
-      <section className="mt-16">
+      <section className="mt-10">
         <div>
-          <div className="text-center mb-10">
+          <div className="text-center mb-10 ">
             <div className="flex items-center justify-center gap-5 mb-5">
               <h2 className=" text-3xl md:text-4xl font-bold mb-4  text-gray-800">
                 Naša misija
@@ -148,6 +149,7 @@ function Pocetna() {
               promovišu odgovoran odnos prema resursima.
             </p>
           </div>
+          <hr className="border-t-2 border-transparent mt-10 bg-gradient-to-r from-[#F0F7EE] via-white to-[#F0F7EE] h-1" />
 
           <div className="mb-12">
             <h3 className="text-3xl font-semibold mb-4 text-gray-700 mt-16">
@@ -194,7 +196,6 @@ function Pocetna() {
           </div>
         </div>
       </section>
-      <Faq />
     </main>
   );
 }

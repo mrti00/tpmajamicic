@@ -1,15 +1,13 @@
 import { FaEye, FaUsers, FaHandshake } from "react-icons/fa";
-import { useState } from "react";
 import planeta from "../assets/images/planet_earth.jpg";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 function ONama() {
-  const [partners] = useState([
-    { name: "Partner 1" },
-    { name: "Partner 2" },
-    { name: "Partner 3" },
-    { name: "Partner 50" },
-    { name: "Partner 30" },
-  ]);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
 
   return (
     <main>
@@ -29,7 +27,8 @@ function ONama() {
           održivost, a naše metode su dizajnirane da minimiziraju uticaj na
           prirodu dok istovremeno maksimizujemo efikasnost u procesu reciklaže.
         </p>
-        <div className="flex flex-col md:flex-row gap-6 mb-12 md:mt-24">
+        <hr className="border-t-2 border-transparent bg-gradient-to-r from-[#F0F7EE] via-white to-[#F0F7EE] h-1" />
+        <div className="flex flex-col md:flex-row gap-6 mb-12 md:mt-16">
           <div className="flex-1">
             <div className="bg-white border border-gray-300 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
               <div className="flex gap-2 items-center justify-center mb-4">
@@ -48,7 +47,7 @@ function ONama() {
             </div>
           </div>
           <div className="flex-1">
-            <div className="bg-white border border-gray-300 rounded-lg p-[9.8px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
+            <div className="bg-white border border-gray-300 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
               <div className="flex gap-2 items-center justify-center mb-4">
                 <h2 className="text-2xl font-bold text-gray-800">Naš Tim</h2>
                 <FaUsers className="text-2xl text-gray-800" />
@@ -92,25 +91,26 @@ function ONama() {
           zajednicama, što dodatno potvrđuje našu reputaciju kao pouzdanog
           partnera u industriji reciklaže.
         </p>
-
-        <p className="text-lg mb-8">
-          Sledeći partneri su se poverili nama i uživaju u kvalitetu naših
-          usluga:
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-300 rounded-lg p-4 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
-            >
-              <h3 className="text-xl font-semibold text-center text-gray-800">
-                <ul>
-                  <li>{partner.name}</li>
-                </ul>
-              </h3>
-            </div>
-          ))}
+        <div className="flex items-center justify-center">
+          <div
+            ref={ref}
+            className="p-4 rounded-full shadow-sm max-w-md w-full bg-gradient-to-r from-[#F0F7EE] via-white to-[#F0F7EE]"
+          >
+            <p className="text-lg text-center">
+              {inView && (
+                <CountUp
+                  className="text-4xl font-bold text-gray-700"
+                  start={0}
+                  end={50}
+                  duration={4}
+                  suffix="+"
+                />
+              )}{" "}
+              <br />
+              Partnera se oslonilo na nas i uživa u vrhunskim uslugama koje
+              pružamo.
+            </p>
+          </div>
         </div>
       </section>
     </main>

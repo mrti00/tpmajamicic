@@ -8,9 +8,8 @@ import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
 
-// Da bi marker izgledao ispravno
+// Fix for marker icon rendering
 delete L.Icon.Default.prototype._getIconUrl;
-
 L.Icon.Default.mergeOptions({
   iconUrl: markerIconUrl,
   iconRetinaUrl: markerIconRetinaUrl,
@@ -40,18 +39,14 @@ const Kontakt = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }),
+      body: JSON.stringify(formData),
     })
       .then((response) => {
-        if (response.ok) {
-          setStatusMessage("Poruka je uspešno poslata!");
-        } else {
-          setStatusMessage("Greška prilikom slanja poruke.");
-        }
+        setStatusMessage(
+          response.ok
+            ? "Poruka je uspešno poslata!"
+            : "Greška prilikom slanja poruke."
+        );
         setIsSending(false);
       })
       .catch(() => {
@@ -68,38 +63,31 @@ const Kontakt = () => {
         </h2>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:hidden mb-8 text-center">
-            <div className="flex items-center justify-center mb-4">
-              <FaUserCircle className="text-gray-800 mr-2 text-xl" />
-              <p className="text-lg">
-                Vlasnik: <span className="font-bold">Jovan Mićić</span>
-              </p>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <FaPhoneAlt className="text-gray-800 mr-2 text-xl" />
-              <a href="tel:0641509929" className="text-lg">
-                Telefon:{" "}
-                <span className="text-gray-800 underline hover:underline">
-                  0641509929
-                </span>
-              </a>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <FaEnvelope className="text-gray-800 mr-2 text-xl" />
-              <a href="mailto:jovanmicic66@gmail.com" className="text-lg">
-                Email:{" "}
-                <span className="text-gray-800 underline hover:underline">
-                  jovanmicic66@gmail.com
-                </span>
-              </a>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <FaClock className="text-gray-800 mr-2 text-xl" />
-              <p className="text-lg">Pon – Pet: 07:00 – 15:00</p>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <IoLocationSharp className="text-gray-800 mr-2 text-xl" />
-              <p className="text-lg">Požega, Srbija</p>
-            </div>
+            {[
+              { icon: <FaUserCircle />, text: "Vlasnik: Jovan Mićić" },
+              {
+                icon: <FaPhoneAlt />,
+                text: <a href="tel:0641509929">Telefon: 0641509929</a>,
+              },
+              {
+                icon: <FaEnvelope />,
+                text: (
+                  <a href="mailto:jovanmicic66@gmail.com">
+                    Email: jovanmicic66@gmail.com
+                  </a>
+                ),
+              },
+              { icon: <FaClock />, text: "Pon – Pet: 07:00 – 15:00" },
+              { icon: <IoLocationSharp />, text: "Požega, Srbija" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center mb-4"
+              >
+                {item.icon}
+                <p className="text-lg ml-2">{item.text}</p>
+              </div>
+            ))}
           </div>
 
           <form
@@ -157,45 +145,38 @@ const Kontakt = () => {
           </form>
 
           <div className="hidden md:block mt-8 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 text-center">
-            <div className="flex items-center justify-center mb-4">
-              <FaUserCircle className="text-gray-800 mr-2 text-xl" />
-              <p className="text-lg">
-                Vlasnik: <span className="font-bold">Jovan Mićić</span>
-              </p>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <FaPhoneAlt className="text-gray-800 mr-2 text-xl" />
-              <a href="tel:0641509929" className="text-lg">
-                Telefon:{" "}
-                <span className="text-gray-800 underline hover:underline">
-                  0641509929
-                </span>
-              </a>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <FaEnvelope className="text-gray-800 mr-2 text-xl" />
-              <a href="mailto:jovanmicic66@gmail.com" className="text-lg">
-                Email:{" "}
-                <span className="text-gray-800 underline hover:underline">
-                  jovanmicic66@gmail.com
-                </span>
-              </a>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <FaClock className="text-gray-800 mr-2 text-xl" />
-              <p className="text-lg">Pon – Pet: 07:00 – 15:00</p>
-            </div>
-            <div className="flex items-center justify-center mb-4">
-              <IoLocationSharp className="text-gray-800 mr-2 text-xl" />
-              <p className="text-lg">Požega, Srbija</p>
-            </div>
+            {[
+              { icon: <FaUserCircle />, text: "Vlasnik: Jovan Mićić" },
+              {
+                icon: <FaPhoneAlt />,
+                text: <a href="tel:0641509929">Telefon: 0641509929</a>,
+              },
+              {
+                icon: <FaEnvelope />,
+                text: (
+                  <a href="mailto:jovanmicic66@gmail.com">
+                    Email: jovanmicic66@gmail.com
+                  </a>
+                ),
+              },
+              { icon: <FaClock />, text: "Pon – Pet: 07:00 – 15:00" },
+              { icon: <IoLocationSharp />, text: "Požega, Srbija" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center mb-4"
+              >
+                {item.icon}
+                <p className="text-lg ml-2">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="w-full h-[250px] md:h-96 z-10 mt-8">
+        <div className="w-full h-[250px] md:h-[450px] z-10 mt-8">
           <MapContainer
             center={[43.843700339879334, 20.051871376712775]}
-            zoom={15}
+            zoom={16}
             className="h-full w-full rounded-lg shadow-md"
           >
             <TileLayer
@@ -203,7 +184,7 @@ const Kontakt = () => {
               attribution='&copy; <a href="https://www.carto.com/attributions">CARTO</a> & <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>'
             />
             <Marker position={[43.843700339879334, 20.051871376712775]}>
-              <Popup>Požega, Srbija</Popup>
+              <Popup>TP Maja Mićić</Popup>
             </Marker>
           </MapContainer>
         </div>

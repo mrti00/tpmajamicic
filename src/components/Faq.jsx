@@ -12,12 +12,12 @@ function Faq() {
     {
       question: "Šta je reciklaža sekundarnih sirovina?",
       answer:
-        "Reciklaža sekundarnih sirovina uključuje proces obrade materijala koji bi inače završio na deponijama. To obuhvata materijale poput kartona, plastike, papira, metala i stakla, koji se obrađuju i ponovo koriste u proizvodnji novih proizvoda.",
+        "Reciklaža sekundarnih sirovina uključuje proces obrade materijala koji bi inače završio na deponijama. To obuhvata materijal koji se obrađuje i ponovo koristi u proizvodnji novih proizvoda.",
     },
     {
       question: "Koje vrste materijala prihvatate?",
       answer:
-        "Prihvatamo širok spektar materijala, uključujući karton, plastiku, papir, metal i staklo. Naša svrha je da produžimo životni vek ovih materijala i smanjimo njihov uticaj na životnu sredinu.",
+        "Prihvatamo širok spektar materijala, uključujući karton, plastiku, papir, staklene ambalaže, plastične flaše, streč foliju, polietilensku foliju i najlon. Naša svrha je da produžimo životni vek ovih materijala i smanjimo njihov uticaj na životnu sredinu.",
     },
     {
       question: "Kako mogu da stupim u kontakt sa vama?",
