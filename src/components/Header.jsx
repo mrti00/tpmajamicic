@@ -35,12 +35,13 @@ function Header() {
       top: 0,
       behavior: "smooth",
     });
+    closeMenu();
   };
 
   return (
-    <header className="shadow-md w-full fixed top-0 left-0 bg-white z-50 ">
-      <div className="max-w-full mx-auto px-4 md:px-5 lg:px-16 py-2 relative">
-        <div className="md:flex items-center justify-between ">
+    <header className="fixed left-0 top-0 z-50 w-full bg-white shadow-md">
+      <div className="relative mx-auto max-w-full px-4 py-2 md:px-5 lg:px-16">
+        <div className="items-center justify-between md:flex">
           <img
             onClick={scrollToTop}
             src={logo}
@@ -49,32 +50,32 @@ function Header() {
           />
           <div
             onClick={handleClick}
-            className="text-3xl absolute right-8 top-8 cursor-pointer md:hidden"
+            className="absolute right-8 top-8 cursor-pointer text-3xl md:hidden"
           >
             {showCross ? (
-              <RxCross2 className="hover:text-gray-400 duration-500" />
+              <RxCross2 className="duration-500 hover:text-gray-400" />
             ) : (
-              <RxHamburgerMenu className="hover:text-gray-400 duration-500" />
+              <RxHamburgerMenu className="duration-500 hover:text-gray-400" />
             )}
           </div>
           <ul
-            className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ${
+            className={`absolute left-0 z-[-1] w-full bg-white pb-12 pl-9 transition-all duration-500 md:static md:z-auto md:flex md:w-auto md:items-center md:pb-0 md:pl-0 ${
               open
                 ? "top-20 opacity-100"
-                : "top-[-490px] md:opacity-100 opacity-0"
+                : "top-[-490px] opacity-0 md:opacity-100"
             }`}
           >
             {Links.map((link) => (
               <li
                 key={link.name}
-                className="md:ml-8 text-xl md:my-0 my-7 text-center"
+                className="my-7 text-center text-xl md:my-0 md:ml-8"
               >
                 <NavLink
                   to={link.link}
                   className={({ isActive }) =>
                     `text-gray-800 duration-500 ${
                       isActive
-                        ? "border-b-2 border-gray-400 hover:text-gray-400 hover:border-none transition-all duration-200"
+                        ? "border-b-2 border-gray-400 transition-all duration-200 hover:border-none hover:text-gray-400"
                         : "hover:text-gray-400"
                     }`
                   }
