@@ -129,7 +129,7 @@ const Usluge = () => {
             <FaTruck className="mr-4 text-3xl text-gray-800" />
             <p>Brza i efikasna dostava širom Srbije.</p>
           </div>
-          <hr className="mt-5 h-1 border-t-2 border-transparent bg-gradient-to-r from-[#F0F7EE] via-white to-[#F0F7EE] md:mt-10" />
+          <hr className="mt-5 h-1 border-t-2 border-transparent bg-gradient-to-r from-[#F0F7EE] via-white to-[#F0F7EE]" />
         </div>
 
         <Faq />
