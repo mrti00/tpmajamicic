@@ -5,6 +5,7 @@ import {
   FaBoxOpen,
   FaPrescriptionBottle,
   FaRegCircle,
+  FaArrowCircleDown,
 } from "react-icons/fa";
 import boxesofboxes from "../assets/images/boxes_boxes.jpg";
 import { MdLocalDrink } from "react-icons/md";
@@ -88,7 +89,12 @@ const Usluge = () => {
             </p>
           </div>
         </div>
-
+        <div className="mb-6 flex flex-col items-center">
+          <h2 className="text-xl font-bold text-gray-800 md:text-2xl">
+            Otkup sekundarnih sirovina, Požega
+          </h2>
+          <FaArrowCircleDown className="text-center text-3xl" />
+        </div>
         <div className="mb-10 rounded-lg border border-gray-300 p-4 shadow-lg">
           <div className="mb-6 flex items-center">
             <FaRecycle className="mr-4 text-3xl text-gray-800" />
@@ -102,7 +108,7 @@ const Usluge = () => {
             {materials.map((material) => (
               <div
                 key={material.name}
-                className="flex items-center space-x-4 rounded-lg border border-gray-300 bg-white p-4 shadow-md"
+                className="hover: flex transform items-center space-x-4 rounded-lg border border-gray-300 bg-white p-4 shadow-md transition duration-300 ease-in-out hover:scale-105"
               >
                 {material.icon}
                 <p className="text-lg text-gray-800">{material.name}</p>
