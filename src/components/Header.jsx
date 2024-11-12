@@ -13,7 +13,6 @@ function Header() {
   let [open, setOpen] = useState(false);
   let [showCross, setShowCross] = useState(false);
 
-  // Function: show icon of X after 0,35s
   const handleClick = () => {
     setOpen(!open);
     if (!open) {
@@ -23,13 +22,11 @@ function Header() {
     }
   };
 
-  // Function: close menu
   const closeMenu = () => {
     setOpen(false);
     setShowCross(false);
   };
 
-  // Function: Scroll to Top on Logo Click
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
