@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+import Preloader from "../components/Preloader";
 import {
   FaRecycle,
   FaCartPlus,
@@ -45,6 +47,21 @@ const materials = [
 ];
 
 const Usluge = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = boxesofboxes;
+
+    img.onload = () => {
+      setIsLoaded(true);
+    };
+  }, []);
+
+  if (!isLoaded) {
+    return <Preloader />;
+  }
+
   return (
     <main>
       <section>
